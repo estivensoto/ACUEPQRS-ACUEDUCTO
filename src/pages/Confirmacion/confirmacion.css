@@ -1,0 +1,110 @@
+/* confirmacion.css */
+
+.confirmacion-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.confirmacion-container h2 {
+  color: #ff8c00; /* Darker orange for the heading */
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.mensaje {
+  background-color: #ffffff; /* White background for the message box */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.mensaje p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #555; /* Medium gray for text */
+  margin-bottom: 20px;
+}
+
+.mensaje strong {
+  color: #ffa500; /* Bright orange for emphasis */
+  font-size: 1.3em;
+  display: block; /* Make it a block element to give it its own line */
+  margin-bottom: 10px;
+}
+
+.boton-regresar {
+  background-color: #ffa500; /* Bright orange for the button */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 15px; /* Space above the button */
+}
+
+.boton-regresar:hover {
+  background-color: #ff8c00; /* Darker orange on hover */
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .confirmacion-container h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+  }
+
+  .mensaje {
+    padding: 30px;
+    max-width: 90%;
+  }
+
+  .mensaje p {
+    font-size: 1.1em;
+  }
+
+  .mensaje strong {
+    font-size: 1.2em;
+  }
+
+  .boton-regresar {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .confirmacion-container h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+
+  .mensaje {
+    padding: 25px;
+  }
+
+  .mensaje p {
+    font-size: 1em;
+  }
+
+  .mensaje strong {
+    font-size: 1.1em;
+  }
+}

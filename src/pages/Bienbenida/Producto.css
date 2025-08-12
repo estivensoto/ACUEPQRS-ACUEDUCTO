@@ -1,0 +1,220 @@
+body {
+  background-color: #444;
+}
+/* Producto.css */
+
+.producto-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.menu-lateral {
+  width: 250px;
+  padding: 30px 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05); /* Subtle shadow on the right */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.menu-lateral h2 {
+  color: #ff8c00; /* Darker orange for the menu title */
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu-lateral li {
+  width: 100%;
+}
+
+.menu-lateral a {
+  display: block;
+  padding: 12px 15px;
+  text-decoration: none;
+  color: #333; /* Dark gray for links */
+  background-color: #ffffff; /* White background for link items */
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #eee; /* Light border for definition */
+  border: white;
+}
+
+.menu-lateral a:hover {
+  background-color: #fff3e6; /* Very light orange on hover */
+  color: #ff8c00; /* Darker orange on hover */
+  border-color: #ffb86e; /* Orange border on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.cerrar-sesion-btn {
+  background-color: #ffa500; /* Bright orange for the button */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: auto; /* Pushes the button to the bottom of the sidebar */
+  width: 80%; /* Adjust width as needed */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cerrar-sesion-btn:hover {
+  background-color: #ff8c00; /* Darker orange on hover */
+  transform: translateY(-2px);
+}
+
+.contenido-principal {
+  flex-grow: 1; /* Allows the content to take up remaining space */
+  padding: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.contenido-principal p {
+  max-width: 800px;
+  font-size: 1.3em;
+  line-height: 1.6;
+  color: #555; /* Medium gray for main text */
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow for the text box */
+}
+
+.contenido-principal strong {
+  color: #ff8c00; /* Darker orange for emphasis */
+}
+
+@media (max-width: 768px) {
+  .producto-container {
+    flex-direction: column; /* Stack sidebar and content vertically */
+  }
+
+  .menu-lateral {
+    width: 100%; /* Sidebar takes full width */
+    padding: 20px 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Shadow on the bottom */
+    flex-direction: row; /* Layout menu items horizontally */
+    justify-content: space-around;
+    gap: 10px;
+    flex-wrap: wrap; /* Allow menu items to wrap */
+  }
+
+  .menu-lateral h2 {
+    display: none; /* Hide menu title on small screens */
+  }
+
+  .menu-lateral ul {
+    flex-direction: row; /* Arrange links in a row */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .menu-lateral li {
+    width: auto; /* Auto width for smaller buttons */
+    flex-grow: 1; /* Allow items to grow */
+    min-width: 120px; /* Minimum width for menu items */
+  }
+
+  .menu-lateral a {
+    padding: 10px;
+    font-size: 1em;
+  }
+
+  .cerrar-sesion-btn {
+    width: auto; /* Auto width for the logout button */
+    margin-top: 15px; /* Add some space */
+    padding: 10px 20px;
+  }
+
+  .contenido-principal {
+    padding: 30px 20px;
+  }
+
+  .contenido-principal p {
+    font-size: 1.1em;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-lateral {
+    flex-direction: column; /* Stack menu items vertically again */
+    align-items: center;
+  }
+
+  .menu-lateral ul {
+    flex-direction: column;
+    width: 80%; /* Make links slightly narrower */
+  }
+
+  .menu-lateral li {
+    width: 100%;
+  }
+
+  .cerrar-sesion-btn {
+    width: 80%;
+  }
+
+  .contenido-principal p {
+    font-size: 1em;
+    padding: 20px;
+  }
+}
+
+.icono {
+  width: 40px; /* más grande */
+  height: 32px;
+  margin-right: 10px;
+  filter: brightness(0) invert(1); /* blanco */
+  transition: transform 0.2s ease;
+}
+
+.icono:hover {
+  transform: scale(1.1); /* animación suave al pasar el mouse */
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.logo-principal {
+  width: 220px; /* ajustá el tamaño como quieras */
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto; /* centrado con margen abajo */
+  border-radius: 20px;
+}
