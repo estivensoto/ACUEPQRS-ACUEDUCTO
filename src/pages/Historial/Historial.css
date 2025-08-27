@@ -2,7 +2,7 @@
   padding: 30px;
   max-width: 1000px;
   margin: auto;
-  background-color: #f5f5f5;
+  background-color: #f4f7f9; /* Fondo gris claro */
   border-radius: 10px;
   font-family: Arial, sans-serif;
 }
@@ -13,20 +13,21 @@ nav {
 
 .volver-btn {
   text-decoration: none;
-  background-color: #444;
+  background-color: #0b3d6d; /* Azul oscuro para el botón */
   color: #fff;
   padding: 10px 18px;
   border-radius: 6px;
   font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 .volver-btn:hover {
-  background-color: #ff9500;
+  background-color: #072a4d; /* Azul más oscuro al pasar el cursor */
 }
 
 h2 {
   margin-bottom: 20px;
-  color: #333;
+  color: #0b3d6d; /* Azul oscuro para el título */
 }
 
 .tabla {
@@ -42,16 +43,16 @@ h2 {
 }
 
 .tabla th {
-  background-color: #0084ff;
+  background-color: #0d5492; /* Azul medio oscuro para el encabezado de la tabla */
   color: white;
 }
 
 .tabla tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #e6f3ff; /* Un azul muy claro para las filas alternas */
 }
 
 .borrar-btn {
-  background-color: #d9534f;
+  background-color: #d9534f; /* Rojo para el botón de borrar (generalmente es un color de advertencia) */
   color: white;
   padding: 10px 16px;
   border: none;
@@ -62,5 +63,9 @@ h2 {
 }
 
 .borrar-btn:hover {
-  background-color: #c9302c;
+  background-color: #c9302c; /* Rojo más oscuro al pasar el cursor */
+}
+
+.titulo{
+color: black;
 }

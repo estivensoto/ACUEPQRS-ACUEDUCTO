@@ -28,7 +28,7 @@ function Historial() {
       <h2> 📜 Historial de Solicitudes PQRS </h2>
 
       {pqrs.length === 0 ? (
-        <p>No hay solicitudes registradas aún.</p>
+        <p className="titulo">No hay solicitudes registradas aún.</p>
       ) : (
         <>
           <button onClick={borrarHistorial} className="borrar-btn">
