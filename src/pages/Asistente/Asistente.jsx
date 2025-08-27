@@ -41,7 +41,7 @@ function Asistente() {
         </Link>
       </nav>
 
-      <h2> 🤖 Asistente Virtual PQRS </h2>
+      <h2 className="titulo2"> 🤖 Asistente Virtual PQRS </h2>
 
       <div className="chat-box">
         {respuestas.map((item, index) => (

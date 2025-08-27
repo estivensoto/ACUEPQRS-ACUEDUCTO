@@ -3,15 +3,15 @@
   margin: 40px auto;
   padding: 20px;
   border-radius: 12px;
-  background-color: #2c2c2c;
+  background-color: #0b3d6d; /* Azul oscuro para el contenedor */
   color: white;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra más oscura para el contraste */
 }
 
 .chat-box {
   height: 300px;
   overflow-y: auto;
-  background-color: #1e1e1e;
+  background-color: #0d5492; /* Azul medio oscuro para el área de chat */
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 8px;
@@ -19,7 +19,7 @@
 
 .mensaje {
   margin-bottom: 15px;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #1a73e8; /* Un azul más claro para el borde de los mensajes */
   padding-bottom: 8px;
 }
 
@@ -33,12 +33,12 @@
   padding: 10px;
   border-radius: 6px;
   border: none;
-  background-color: #333;
+  background-color: #1b68a7; /* Azul más claro para el campo de entrada */
   color: white;
 }
 
 .input-box button {
-  background-color: #0084ff;
+  background-color: #0084ff; /* Un azul brillante para el botón */
   color: white;
   border: none;
   padding: 10px 16px;
@@ -47,5 +47,9 @@
 }
 
 .input-box button:hover {
-  background-color: #006cd1;
+  background-color: #006cd1; /* Un azul más oscuro al pasar el cursor */
+}
+
+.titulo2{
+  color: black;
 }

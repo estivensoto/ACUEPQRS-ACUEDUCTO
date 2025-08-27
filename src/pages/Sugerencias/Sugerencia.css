@@ -3,7 +3,7 @@
   display: inline-flex;
   align-items: center;
   padding: 8px 18px;
-  background-color: #ff8c00;
+  background-color: #0d5492; /* Azul medio oscuro para el botón */
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -16,7 +16,7 @@
 }
 
 .iten:hover {
-  background-color: #e67e00;
+  background-color: #0b3d6d; /* Azul oscuro al pasar el cursor */
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
@@ -26,6 +26,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f4f7f9; /* Fondo gris claro */
 }
 
 /* Contenedor principal del formulario */
@@ -33,7 +34,7 @@ body {
   max-width: 600px;
   margin: 40px auto;
   background-color: #ffffff;
-  border: 2px solid #ffa726;
+  border: 2px solid #0d5492; /* Azul medio oscuro para el borde */
   border-radius: 12px;
   padding: 30px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -47,7 +48,7 @@ body {
 
 /* Título */
 .titulo h1 {
-  color: #fb8c00;
+  color: #0b3d6d; /* Azul oscuro */
   text-align: center;
   margin-bottom: 30px;
 }
@@ -62,7 +63,7 @@ body {
 .reclamo-form input,
 .reclamo-form textarea {
   padding: 10px;
-  border: 1px solid #ffa726;
+  border: 1px solid #0d5492; /* Azul medio oscuro */
   border-radius: 8px;
   font-size: 14px;
   outline: none;
@@ -71,12 +72,12 @@ body {
 
 .reclamo-form input:focus,
 .reclamo-form textarea:focus {
-  border-color: #fb8c00;
+  border-color: #0b3d6d; /* Azul oscuro al enfocar */
 }
 
 /* Botón de enviar */
 .reclamo-form button {
-  background-color: #ffa726;
+  background-color: #0d5492; /* Azul medio oscuro */
   color: white;
   font-weight: bold;
   padding: 12px;
@@ -87,7 +88,7 @@ body {
 }
 
 .reclamo-form button:hover {
-  background-color: #fb8c00;
+  background-color: #0b3d6d; /* Azul oscuro al pasar el cursor */
 }
 
 .sugerencia-imagen {

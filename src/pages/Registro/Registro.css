@@ -1,75 +1,75 @@
 /* src/pages/registro.css */
 .registro-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: #f2f2f2;
-  border-radius: 10px;
+ max-width: 400px;
+ margin: 0 auto;
+ padding: 2rem;
+ background: #f2f2f2;
+ border-radius: 10px;
 }
 
 .registro-form {
-  display: flex;
-  flex-direction: column;
+ display: flex;
+ flex-direction: column;
 }
 
 .registro-form input {
-  margin-bottom: 1rem;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+ margin-bottom: 1rem;
+ padding: 10px;
+ border: 1px solid #ccc;
+ border-radius: 5px;
 }
 
 .registro-form button {
-  padding: 10px;
-  background-color: #ff9500;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+ padding: 10px;
+ background-color: #0d5492; /* Azul medio oscuro */
+ color: white;
+ border: none;
+ border-radius: 5px;
+cursor: pointer;
 }
 
 .registro-form button:hover {
-  background-color: #ff9500;
+  background-color: #0b3d6d; /* Azul oscuro al pasar el cursor */
 }
 
 
 
 .form-container {
-  background-color: #f2f2f2;
-  padding: 40px 50px;
-  border-radius: 10px;
-  width: 400px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+ background-color: #f2f2f2;
+ padding: 40px 50px;
+ border-radius: 10px;
+ width: 400px;
+ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
 }
 
 .form-container h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 24px;
+ text-align: center;
+ margin-bottom: 30px;
+ font-size: 24px;
+ color: #0b3d6d; /* Azul oscuro */
 }
 
 .form-container input {
-  width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
+ width: 100%;
+ padding: 12px 15px;
+ margin-bottom: 15px;
+ border: 1px solid #ccc;
+ border-radius: 6px;
+ font-size: 16px;
 }
 
 .form-container button {
-  width: 100%;
-  padding: 12px;
-  background-color: #ff9d00;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+ width: 100%;
+ padding: 12px;
+ background-color: #0d5492; /* Azul medio oscuro */
+ color: white;
+ border: none;
+ border-radius: 6px;
+ font-size: 16px;
+ cursor: pointer;
+ transition: background-color 0.2s ease-in-out;
 }
 
 .form-container button:hover {
-  background-color: #ff9100;
+ background-color: #0b3d6d; /* Azul oscuro al pasar el cursor */
 }
-
