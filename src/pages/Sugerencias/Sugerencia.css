@@ -1,99 +1,153 @@
-/* Botón de navegación */
+/* General Container y Tipografía */
+.formulario-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff; 
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navigation Link */
+nav {
+    margin-bottom: 20px;
+    text-align: left;
+}
 .iten {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 18px;
-  background-color: #0d5492; /* Azul medio oscuro para el botón */
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 0.95em;
-  transition: background-color 0.3s ease, transform 0.2s ease,
-    box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  gap: 5px;
+    text-decoration: none;
+    color: #007bff; 
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
 }
-
 .iten:hover {
-  background-color: #0b3d6d; /* Azul oscuro al pasar el cursor */
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #e9f5ff;
 }
 
-/* Contenedor general */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f7f9; /* Fondo gris claro */
-}
-
-/* Contenedor principal del formulario */
-.sugerencia-container {
-  max-width: 600px;
-  margin: 40px auto;
-  background-color: #ffffff;
-  border: 2px solid #0d5492; /* Azul medio oscuro para el borde */
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Alineación del botón de navegación */
-.nav-interno {
-  text-align: left;
-  margin-bottom: 10px;
-}
-
-/* Título */
+/* Title Styling */
 .titulo h1 {
-  color: #0b3d6d; /* Azul oscuro */
-  text-align: center;
-  margin-bottom: 30px;
+    text-align: center;
+    font-size: 2em;
+    color: #28a745; /* Verde para Sugerencia */
+    border-bottom: 3px solid #28a745;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
-/* Formulario */
-.reclamo-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.subtitulo-formal {
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+    margin-bottom: 30px;
 }
 
-.reclamo-form input,
-.reclamo-form textarea {
-  padding: 10px;
-  border: 1px solid #0d5492; /* Azul medio oscuro */
-  border-radius: 8px;
-  font-size: 14px;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.reclamo-form input:focus,
-.reclamo-form textarea:focus {
-  border-color: #0b3d6d; /* Azul oscuro al enfocar */
-}
-
-/* Botón de enviar */
-.reclamo-form button {
-  background-color: #0d5492; /* Azul medio oscuro */
-  color: white;
-  font-weight: bold;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.reclamo-form button:hover {
-  background-color: #0b3d6d; /* Azul oscuro al pasar el cursor */
-}
-
+/* Image */
 .sugerencia-imagen {
-  display: block;
-  margin: 20px auto;
-  max-width: 200px;
-  height: auto;
+    display: block;
+    width: 20%;
+    height: auto;
+    margin: 0 auto 30px auto;
+    border-radius: 8px;
+}
+
+/* Form Styling */
+.formulario-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+/* Titles for Sections */
+.seccion-titulo {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #343a40;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    border-left: 4px solid #28a745; /* Color de énfasis verde */
+}
+
+/* Separator */
+.separator {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #ccc, rgba(0, 0, 0, 0));
+    margin: 15px 0;
+}
+
+/* Input/Textarea/Select Fields */
+.formulario-form input[type="text"],
+.formulario-form input[type="tel"],
+.formulario-form input[type="email"],
+.formulario-form select,
+.formulario-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    width: 100%; 
+    box-sizing: border-box; 
+    /* Estilos específicos para select */
+    appearance: none; 
+    background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="292.4" height="292.4" viewBox="0 0 292.4 292.4"><path fill="#333" d="M287 69.4a17.6 17.6 0 0 0-13.2-5.6H18.6a17.6 17.6 0 0 0-13.2 5.6 17.6 17.6 0 0 0 0 25.3l124 124c6.8 6.8 17.7 6.8 24.5 0l124-124c6.7-6.9 6.7-17.8 0-25.2z"/></svg>') no-repeat right 10px center / 12px 12px;
+    background-color: white;
+}
+
+.formulario-form input:focus,
+.formulario-form select:focus,
+.formulario-form textarea:focus {
+    border-color: #28a745; 
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.25);
+    outline: none;
+}
+
+.formulario-form textarea {
+    resize: vertical; 
+    min-height: 100px;
+}
+
+/* Professional Button Styling (Éxito/Idea color) */
+.formulario-form button[type="submit"] {
+    padding: 15px 20px;
+    background-color: #28a745; /* Verde para Sugerencia */
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 10px;
+}
+
+.formulario-form button[type="submit"]:hover:not(:disabled) {
+    background-color: #1e7e34; 
+}
+
+/* Disabled Button Style (Security) */
+.formulario-form button[type="submit"]:disabled {
+    background-color: #ccc; 
+    cursor: not-allowed;
+    color: #666;
+}
+
+/* Validation Error Message */
+.validation-error-message {
+    color: #dc3545; 
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.required-fields-note {
+    text-align: right;
+    font-size: 0.9em;
+    color: #6c757d;
 }

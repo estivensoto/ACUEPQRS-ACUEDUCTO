@@ -1,75 +1,144 @@
-/* src/pages/registro.css */
+/*
+  Esquema Monocromático: Tonos de Azul
+  -----------------------------------
+  Azul Principal Oscuro (botones, títulos): #003366
+  Azul Medio (bordes, enfoque): #336699
+  Azul Claro (hover, fondo secundario): #E6F0FF
+  Fondo General: #FFFFFF (Blanco puro o muy claro)
+  Texto: #333333 (Gris oscuro para buena legibilidad)
+*/
+
+body {
+  /* Asegura que el fondo sea blanco si se usa a nivel global */
+  background-color: #f7f7f7;
+  font-family: 'Arial', sans-serif;
+}
+
 .registro-container {
- max-width: 400px;
- margin: 0 auto;
- padding: 2rem;
- background: #f2f2f2;
- border-radius: 10px;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #FFFFFF; /* Fondo blanco para el formulario */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 51, 102, 0.1); /* Sombra suave azulada */
+  border: 1px solid #E6F0FF; /* Borde muy sutil azul claro */
 }
 
-.registro-form {
- display: flex;
- flex-direction: column;
+.registro-container h2 {
+  text-align: center;
+  color: #003366; /* Azul Oscuro para el título */
+  margin-bottom: 25px;
+  font-size: 1.8em;
+  border-bottom: 2px solid #336699; /* Subrayado sutil */
+  padding-bottom: 10px;
 }
 
-.registro-form input {
- margin-bottom: 1rem;
- padding: 10px;
- border: 1px solid #ccc;
- border-radius: 5px;
+.registro-form input[type="text"],
+.registro-form input[type="email"],
+.registro-form input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #BBCCDD; /* Borde gris-azulado sutil */
+  border-radius: 8px;
+  box-sizing: border-box; /* Asegura que el padding no cambie el ancho */
+  font-size: 1em;
+  color: #333333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.registro-form button {
- padding: 10px;
- background-color: #0d5492; /* Azul medio oscuro */
- color: white;
- border: none;
- border-radius: 5px;
-cursor: pointer;
+.registro-form input:focus {
+  border-color: #336699; /* Azul medio en el enfoque */
+  box-shadow: 0 0 0 3px rgba(51, 102, 153, 0.2); /* Sombra de enfoque sutil */
+  outline: none;
 }
 
-.registro-form button:hover {
-  background-color: #0b3d6d; /* Azul oscuro al pasar el cursor */
+/* --- Botón Principal --- */
+.registro-form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #003366; /* Azul Oscuro (Principal) */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-
-
-.form-container {
- background-color: #f2f2f2;
- padding: 40px 50px;
- border-radius: 10px;
- width: 400px;
- box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+.registro-form button[type="submit"]:hover:not(:disabled) {
+  background-color: #336699; /* Azul medio al pasar el mouse */
 }
 
-.form-container h2 {
- text-align: center;
- margin-bottom: 30px;
- font-size: 24px;
- color: #0b3d6d; /* Azul oscuro */
+.registro-form button[type="submit"]:disabled {
+    background-color: #99AABB; /* Tono de azul claro/gris para desactivado */
+    cursor: not-allowed;
 }
 
-.form-container input {
- width: 100%;
- padding: 12px 15px;
- margin-bottom: 15px;
- border: 1px solid #ccc;
- border-radius: 6px;
- font-size: 16px;
+/* --- Mensajes de Error --- */
+.error-message {
+  color: #CC0000; /* Un rojo para el error, que contrasta bien con el azul */
+  font-size: 0.9em;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  text-align: left;
 }
 
-.form-container button {
- width: 100%;
- padding: 12px;
- background-color: #0d5492; /* Azul medio oscuro */
- color: white;
- border: none;
- border-radius: 6px;
- font-size: 16px;
- cursor: pointer;
- transition: background-color 0.2s ease-in-out;
+/* --- Checkbox y Términos --- */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.form-container button:hover {
- background-color: #0b3d6d; /* Azul oscuro al pasar el cursor */
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    /* Estilo del checkbox moderno (puede variar según el navegador) */
+    accent-color: #336699;
+    height: 18px;
+    width: 18px;
+}
+
+.checkbox-group label {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.checkbox-group a {
+    color: #003366; /* Enlace azul oscuro */
+    text-decoration: none;
+}
+
+.checkbox-group a:hover {
+    text-decoration: underline;
+    color: #336699; /* Azul medio al pasar el mouse */
+}
+
+/* --- Estilos para el Botón Secundario (Volver a Login) --- */
+
+/* Asegura que el Link ocupe todo el ancho para que el botón lo herede */
+.registro-form .back-link {
+    display: block;
+    width: 100%;
+}
+
+.registro-form .secondary-button {
+  width: 100%;
+  padding: 12px;
+  background-color: transparent; /* Fondo transparente */
+  color: #003366; /* Texto azul oscuro */
+  border: 1px solid #003366; /* Borde azul oscuro */
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 15px; /* Espacio extra debajo del botón principal */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.registro-form .secondary-button:hover {
+  background-color: #E6F0FF; /* Azul claro de hover */
+  color: #003366;
 }

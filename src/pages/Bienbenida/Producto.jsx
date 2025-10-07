@@ -1,3 +1,4 @@
+// src/components/Producto.jsx (Manteniendo la estructura lateral original)
 import { Link } from "react-router-dom";
 import "./Producto.css";
 import peticionImg from "../../assets/peticion.png";

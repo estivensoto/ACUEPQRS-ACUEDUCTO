@@ -1,115 +1,151 @@
-/* Estilos generales del cuerpo */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f7f9; /* Fondo gris claro */
-}
-
-/* --- */
-
-/* Navegación */
-nav {
-  margin-bottom: 20px;
-}
-
-/* Estilo para los botones de navegación */
-.nav-button {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 18px;
-  background-color: #0d5492; /* Azul medio oscuro para el botón */
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 0.95em;
-  transition: background-color 0.3s ease, transform 0.2s ease,
-    box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  gap: 5px;
-}
-
-.nav-button:hover {
-  background-color: #0b3d6d; /* Azul oscuro al pasar el cursor */
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* --- */
-
-/* Título */
-.titulo {
-  color: #0b3d6d; /* Azul oscuro */
-}
-
-.titulo h1 {
-  color: #0b3d6d; /* Azul oscuro */
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-/* --- */
-
-/* Contenedor del formulario */
+/* General Container and Layout */
 .formulario-container {
-  max-width: 600px;
-  margin: 40px auto;
-  background-color: #ffffff;
-  border: 2px solid #0b3d6d; /* Azul oscuro para el borde */
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff; 
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* --- */
+/* Navigation Link */
+nav {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.iten {
+    text-decoration: none;
+    color: #007bff; 
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+.iten:hover {
+    background-color: #e9f5ff;
+}
 
-/* Formulario */
+/* Title Styling */
+.titulo h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #004d99; 
+    border-bottom: 3px solid #004d99;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.subtitulo-formal {
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+/* Image */
+.peticion-imagen {
+    display: block;
+    width: 20%;
+    height: auto;
+    margin: 0 auto 30px auto;
+    border-radius: 8px;
+}
+
+/* Form Styling */
 .formulario-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
 }
 
-.formulario-form input,
+/* Titles for Sections */
+.seccion-titulo {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #343a40;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    border-left: 4px solid #ffc107; 
+}
+
+/* Separator */
+.separator {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #ccc, rgba(0, 0, 0, 0));
+    margin: 15px 0;
+}
+
+/* Input/Textarea/Select Fields */
+.formulario-form input[type="text"],
+.formulario-form input[type="number"],
+.formulario-form input[type="tel"],
+.formulario-form input[type="email"],
+.formulario-form select,
 .formulario-form textarea {
-  padding: 10px;
-  border: 1px solid #0d5492; /* Azul medio oscuro */
-  border-radius: 8px;
-  font-size: 14px;
-  outline: none;
-  transition: border-color 0.3s ease;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    width: 100%; 
+    box-sizing: border-box; 
 }
 
 .formulario-form input:focus,
+.formulario-form select:focus,
 .formulario-form textarea:focus {
-  border-color: #0b3d6d; /* Azul oscuro al enfocar */
+    border-color: #007bff; 
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
 }
 
-/* --- */
-
-/* Botón de enviar */
-.formulario-form button {
-  background-color: #0d5492; /* Azul medio oscuro */
-  color: white;
-  font-weight: bold;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.formulario-form textarea {
+    resize: vertical; 
+    min-height: 100px;
 }
 
-.formulario-form button:hover {
-  background-color: #0b3d6d; /* Azul oscuro al pasar el cursor */
+/* Professional Button Styling */
+.formulario-form button[type="submit"] {
+    padding: 15px 20px;
+    background-color: #17a2b8; /* Institutional Cyan */
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 10px;
 }
 
-/* --- */
+.formulario-form button[type="submit"]:hover:not(:disabled) {
+    background-color: #138496; 
+}
 
-/* Imagen de petición */
-.peticion-imagen {
-  display: block;
-  margin: 20px auto;
-  max-width: 200px;
-  height: auto;
+/* Disabled Button Style (Security) */
+.formulario-form button[type="submit"]:disabled {
+    background-color: #ccc; 
+    cursor: not-allowed;
+    color: #666;
+}
+
+/* Validation Error Message */
+.validation-error-message {
+    color: #dc3545; /* Red for errors */
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.required-fields-note {
+    text-align: right;
+    font-size: 0.9em;
+    color: #6c757d;
 }
