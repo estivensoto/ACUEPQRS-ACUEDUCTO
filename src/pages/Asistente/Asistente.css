@@ -1,55 +1,165 @@
+/* Contenedor Principal */
 .asistente-container {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
-  border-radius: 12px;
-  background-color: #0b3d6d; /* Azul oscuro para el contenedor */
-  color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra más oscura para el contraste */
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f4f7f6; /* Fondo ligero para el chat */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh; /* Asegura que el contenedor tenga altura */
 }
 
+/* Navegación */
+nav {
+    margin-bottom: 20px;
+}
+.iten {
+    text-decoration: none;
+    color: #007bff; 
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+.iten:hover {
+    background-color: #e9f5ff;
+}
+
+/* Títulos e Instrucciones */
+.titulo2 {
+    text-align: center;
+    font-size: 1.8em;
+    color: #004d99; 
+    margin-bottom: 5px;
+}
+
+.instruccion {
+    text-align: center;
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+/* Caja del Chat (Historial) */
 .chat-box {
-  height: 300px;
-  overflow-y: auto;
-  background-color: #0d5492; /* Azul medio oscuro para el área de chat */
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 8px;
+    flex-grow: 1; /* Permite que el chat crezca y empuje el input hacia abajo */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    overflow-y: auto; /* Scroll dentro de la caja de chat */
+    max-height: 50vh; /* Altura máxima para la ventana de chat */
+    display: flex; /* Añadido para mejor control de alineación de mensajes */
+    flex-direction: column;
 }
 
+/* Estilo de Mensajes */
 .mensaje {
-  margin-bottom: 15px;
-  border-bottom: 1px solid #1a73e8; /* Un azul más claro para el borde de los mensajes */
-  padding-bottom: 8px;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 85%;
+    line-height: 1.5;
 }
 
+/* Estilo para mensajes del usuario (Tú) */
+.mensaje.usuario {
+    background-color: #dcf8c6; /* Fondo verde claro */
+    align-self: flex-end; /* Alinea a la derecha */
+    margin-left: auto;
+}
+
+/* Estilo para mensajes del asistente */
+.mensaje.asistente {
+    background-color: #e6e6e6; /* Fondo gris claro */
+    align-self: flex-start; /* Alinea a la izquierda */
+    margin-right: auto;
+}
+
+.mensaje p {
+    margin: 0;
+    font-size: 0.95em;
+}
+
+.mensaje strong {
+    font-weight: bold;
+    color: #004d99;
+}
+
+/* --- Estilos para Sugerencias --- */
+
+.sugerencias-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #e9f5ff; /* Fondo claro para destacar */
+}
+
+.sugerencia-btn {
+    padding: 8px 12px;
+    background-color: #ffffff; 
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s, color 0.2s;
+    /* Asegura que no se desborde */
+    white-space: nowrap; 
+}
+
+.sugerencia-btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Caja de Input (Parte inferior) */
 .input-box {
-  display: flex;
-  gap: 10px;
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #ffffff;
+    border-radius: 8px;
 }
 
-.input-box input {
-  flex: 1;
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  background-color: #1b68a7; /* Azul más claro para el campo de entrada */
-  color: white;
+.input-box input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-box input[type="text"]:focus {
+    border-color: #007bff;
 }
 
 .input-box button {
-  background-color: #0084ff; /* Un azul brillante para el botón */
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
-  cursor: pointer;
+    padding: 10px 20px;
+    background-color: #007bff; /* Color institucional azul */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 .input-box button:hover {
-  background-color: #006cd1; /* Un azul más oscuro al pasar el cursor */
+    background-color: #0056b3;
 }
 
-.titulo2{
-  color: black;
+/* Regla para asegurar el scroll al final del chat-box */
+.chat-end-placeholder {
+    height: 1px; /* Espacio mínimo para que el scroll funcione bien */
 }

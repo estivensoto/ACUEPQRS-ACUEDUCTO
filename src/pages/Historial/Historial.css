@@ -1,71 +1,188 @@
+/* Contenedor Principal */
 .historial-container {
-  padding: 30px;
-  max-width: 1000px;
-  margin: auto;
-  background-color: #f4f7f9; /* Fondo gris claro */
-  border-radius: 10px;
-  font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f4f7f6; 
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-nav {
-  margin-bottom: 20px;
+/* Header y Botón de Borrar */
+.historial-header {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.volver-btn {
-  text-decoration: none;
-  background-color: #0b3d6d; /* Azul oscuro para el botón */
-  color: #fff;
-  padding: 10px 18px;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: background-color 0.3s;
+.historial-header h2 {
+    font-size: 2em;
+    color: #004d99; 
+    margin-bottom: 5px;
 }
 
-.volver-btn:hover {
-  background-color: #072a4d; /* Azul más oscuro al pasar el cursor */
-}
-
-h2 {
-  margin-bottom: 20px;
-  color: #0b3d6d; /* Azul oscuro para el título */
-}
-
-.tabla {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.tabla th,
-.tabla td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: left;
-}
-
-.tabla th {
-  background-color: #0d5492; /* Azul medio oscuro para el encabezado de la tabla */
-  color: white;
-}
-
-.tabla tr:nth-child(even) {
-  background-color: #e6f3ff; /* Un azul muy claro para las filas alternas */
+.instruccion-historial {
+    color: #6c757d;
+    font-size: 1em;
+    margin-bottom: 20px;
 }
 
 .borrar-btn {
-  background-color: #d9534f; /* Rojo para el botón de borrar (generalmente es un color de advertencia) */
-  color: white;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 15px;
-  cursor: pointer;
-  transition: background-color 0.2s;
+    padding: 10px 20px;
+    background-color: #dc3545; /* Rojo de advertencia/peligro */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 .borrar-btn:hover {
-  background-color: #c9302c; /* Rojo más oscuro al pasar el cursor */
+    background-color: #c82333;
 }
 
-.titulo{
-color: black;
+/* Navegación (Volver a Inicio) */
+nav {
+    margin-bottom: 20px;
+}
+.volver-btn {
+    text-decoration: none;
+    color: #007bff; 
+    font-weight: bold;
+    padding: 8px 15px;
+    border: 1px solid #007bff;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+}
+.volver-btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Estado Vacío */
+.vacio-box {
+    text-align: center;
+    padding: 50px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    margin-top: 30px;
+    background-color: #ffffff;
+}
+.mensaje-vacio {
+    font-size: 1.2em;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+.enlace-inicio {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.enlace-inicio:hover {
+    background-color: #0056b3;
+}
+
+
+/* --- Grid de Tarjetas --- */
+.cards-grid {
+    display: grid;
+    /* 3 columnas en escritorio, adaptable a 2 o 1 en móvil */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card-solicitud {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 5px solid; /* Usado para el color de tipo */
+}
+
+.card-solicitud:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Colores de Borde Dinámicos */
+.card-solicitud.peticion { border-left-color: #007bff; }
+.card-solicitud.queja { border-left-color: #dc3545; }
+.card-solicitud.reclamo { border-left-color: #ffc107; }
+.card-solicitud.sugerencia { border-left-color: #28a745; }
+
+
+/* Encabezado de la Tarjeta */
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.card-icono {
+    font-size: 1.8em;
+    margin-right: 10px;
+}
+
+.card-tipo {
+    margin: 0;
+    font-size: 1.3em;
+    color: #343a40;
+}
+
+/* Cuerpo de la Tarjeta */
+.card-body p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.card-body strong {
+    color: #343a40;
+    font-weight: 600;
+}
+
+.card-radicado {
+    font-size: 1.1em !important;
+    font-weight: bold;
+    color: #004d99 !important;
+    margin-bottom: 15px !important;
+}
+
+.card-mensaje {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dotted #ccc;
+}
+
+.card-mensaje p {
+    font-style: italic;
+    color: #6c757d;
+}
+
+/* Media Query para tabletas */
+@media (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+/* Media Query para móviles */
+@media (max-width: 600px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .historial-container {
+        margin: 20px;
+        padding: 15px;
+    }
 }
