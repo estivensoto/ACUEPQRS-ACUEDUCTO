@@ -1,12 +1,10 @@
 // src/pages/Registro.jsx
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom"; // Importamos 'Link' aquí
+import { useNavigate, Link } from "react-router-dom";
 import "./Registro.css";
 
-// Función de cifrado simple (¡SOLO PARA DEMOSTRACIÓN!)
-const simpleEncrypt = (password) => {
-  return `hashed_pwd_${password.length}chars`;
-};
+// Dirección URL de tu script PHP
+const REGISTER_API_URL = "http://localhost/ACUEPQRS_Backend/registro.php";
 
 const Registro = ({ onLogin }) => {
   const navigate = useNavigate();
@@ -19,6 +17,7 @@ const Registro = ({ onLogin }) => {
     aceptaTerminos: false,
   });
   const [errors, setErrors] = useState({});
+  const [registroStatus, setRegistroStatus] = useState(null); // 'success', 'error', 'loading'
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -28,6 +27,9 @@ const Registro = ({ onLogin }) => {
     });
     if (errors[name]) {
       setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
+    }
+    if (errors.global) {
+      setErrors((prevErrors) => ({ ...prevErrors, global: "" }));
     }
   };
 
@@ -56,34 +58,62 @@ const Registro = ({ onLogin }) => {
       newErrors.aceptaTerminos = "Debes aceptar los términos y condiciones.";
     }
 
-    setErrors(newErrors);
+    setErrors((prevErrors) => ({ ...prevErrors, ...newErrors }));
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!validate()) {
       return;
     }
 
-    const hashedPassword = simpleEncrypt(formData.password);
+    setRegistroStatus('loading');
+    setErrors({});
 
-    const userData = {
+    const userDataToSend = {
       nombre: formData.nombre,
       apellido: formData.apellido,
       email: formData.email,
-      passwordHash: hashedPassword,
-      fechaRegistro: new Date().toISOString(),
+      password: formData.password,
     };
 
-    console.log("Datos de registro listos para enviar al backend:", userData);
-    
-    localStorage.setItem("usuarioRegistrado", JSON.stringify(userData));
+    try {
+      const response = await fetch(REGISTER_API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userDataToSend),
+      });
 
-    onLogin(userData.email);
-    
-    navigate("/");
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setRegistroStatus('success');
+        console.log("Registro exitoso:", result.message);
+
+        onLogin(userDataToSend.email);
+
+        setTimeout(() => {
+          navigate("/");
+        }, 1500);
+
+      } else {
+        setRegistroStatus('error');
+        // El mensaje de error viene del PHP (ej: "El correo electrónico ya está registrado.")
+        setErrors({ global: result.message || "Error desconocido al intentar registrar el usuario." });
+        console.error("Error del Backend:", result.message);
+      }
+    } catch (error) {
+      // ESTE ES EL ERROR QUE SIGUES VIENDO: FALLO DE CONEXIÓN
+      setRegistroStatus('error');
+      setErrors({ global: "ERROR CRÍTICO: No se pudo conectar al servidor. Revisa el Paso 3." });
+      console.error("Error de Fetch/Conexión:", error);
+    } finally {
+        if(registroStatus === 'loading') setRegistroStatus(null); 
+    }
   };
 
   return (
@@ -113,11 +143,11 @@ const Registro = ({ onLogin }) => {
         />
         {errors.apellido && <p className="error-message">{errors.apellido}</p>}
 
-        {/* Correo Electrónico */}
+        {/* Correo Electrónico (será el nombre de usuario) */}
         <input
           type="email"
           name="email"
-          placeholder="Correo electrónico"
+          placeholder="Correo electrónico (Será tu Usuario)"
           value={formData.email}
           onChange={handleChange}
           required
@@ -159,17 +189,23 @@ const Registro = ({ onLogin }) => {
         </div>
         {errors.aceptaTerminos && <p className="error-message">{errors.aceptaTerminos}</p>}
         
-        <button type="submit" disabled={!formData.aceptaTerminos}>
-            Registrarse
+        {/* Mensajes de Estado Global / Errores del Backend */}
+        {errors.global && <p className="error-message">{errors.global}</p>}
+        {registroStatus === 'success' && <p className="success-message">✅ ¡Registro exitoso! Redirigiendo...</p>}
+        
+        <button 
+          type="submit" 
+          disabled={!formData.aceptaTerminos || registroStatus === 'loading'}
+        >
+          {registroStatus === 'loading' ? 'Registrando...' : 'Registrarse'}
         </button>
 
         {/* Botón de Regreso a Login */}
         <Link to="/login" className="back-link">
-            <button type="button" className="secondary-button">
-                ← Volver a Iniciar Sesión
-            </button>
+          <button type="button" className="secondary-button" disabled={registroStatus === 'loading'}>
+            ← Volver a Iniciar Sesión
+          </button>
         </Link>
-        {/* Fin del Botón de Regreso */}
 
       </form>
     </div>
